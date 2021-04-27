@@ -1,5 +1,5 @@
-import cv2
-from facenet_pytorch import MTCNN
+import cv2                                # Using opencv to access camera 
+from facenet_pytorch import MTCNN         # This is our face detector written in pytorch
 import numpy as np
 
 
@@ -37,7 +37,7 @@ class Face_detect(object):
             
 
             try:
-                boxes, prob, landmarks = self.mtcnn.detect(frame, landmarks = True)
+                boxes, prob, landmarks = self.mtcnn.detect(frame, landmarks = True)     # This will make the MTCNN run on the input image
                 self.draw(frame,boxes, prob, landmarks)
 
             
